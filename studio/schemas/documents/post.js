@@ -49,6 +49,11 @@ export default {
         }
       ]
     },
+    {	    
+      name: 'mainImage',	     
+      type: 'mainImage',	     
+      title: 'Main image'	     
+    },
     {
       name: 'categories',
       type: 'array',
