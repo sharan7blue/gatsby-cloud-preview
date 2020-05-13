@@ -7,10 +7,12 @@ import {
 } from 'react-icons/lib/md'
 import IframePreview from '../previews/IframePreview'
 
+import AllSeoPreviews from '../previews/AllSeoPreviews';
+
 // Web preview configuration
 const remoteURL = 'https://gatsby-cloud-preview.netlify.app'
 const localURL = 'http://localhost:8000'
-const previewURL =
+const previewURL = 'https://gatsby-cloud-preview-3868443234.gtsb.io'
   window.location.hostname === 'localhost' ? localURL : remoteURL
 
 export const getDefaultDocumentNode = props => {
@@ -28,7 +30,11 @@ export const getDefaultDocumentNode = props => {
       S.view
         .component(IframePreview)
         .title('Web preview')
-        .options({ previewURL })
+        .options({ previewURL }),
+        S.view
+        .component(AllSeoPreviews)
+        .title('SEO Preview')
+        .id('seo-preview'),
     ])
   }
   return S.document().views([S.view.form()])
